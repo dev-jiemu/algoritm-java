@@ -1,4 +1,4 @@
-package src.ArrayListClass;
+package src.ListClass;
 
 
 // 연결 자료구조 : 기본
