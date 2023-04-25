@@ -26,6 +26,10 @@ public class TermCounter {
         return 0;
     }
 
+    public String getLabel() {
+        return label;
+    }
+
     public void put(String term, int count) {
         map.put(term, count);
     }
