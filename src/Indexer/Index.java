@@ -40,7 +40,13 @@ public class Index {
 
     public void indexPage(String url, Elements paragraphs) {
         //TermCounter 객체를 만들고 단락에 있는 단어 카운팅
+        TermCounter tc = new TermCounter(url);
+        tc.processElements(paragraphs);
+
         //TermCounter 에 있는 각 검색어에 대해 TermCounter 객체를 인덱스에 추가
+        for (String term: tc.keySet()) {
+            add(term, tc);
+        }
     }
 
     public static void main(String[] args) throws IOException {
