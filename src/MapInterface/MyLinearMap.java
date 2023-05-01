@@ -1,12 +1,16 @@
 package src.MapInterface;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MyLinearMap<K, V> implements Map<K, V> {
 
-    private List<Entry> entries = new ArrayList<>();
+    private List<Entry> entries = new ArrayList<Entry>();
 
-    public class Entry<K, V> implements Map.Entry<K, V> {
+    public class Entry implements Map.Entry<K, V> {
         private K key;
         private V value;
 
@@ -14,40 +18,61 @@ public class MyLinearMap<K, V> implements Map<K, V> {
             this.key = key;
             this.value = value;
         }
+
         @Override
         public K getKey() {
-            return null;
+            return key;
         }
-
         @Override
         public V getValue() {
-            return null;
+            return value;
         }
-
         @Override
-        public V setValue(V value) {
-            return null;
+        public V setValue(V newValue) {
+            value = newValue;
+            return value;
         }
     }
 
     @Override
-    public int size() {
-        return 0;
+    public void clear() {
+        entries.clear();
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean containsKey(Object target) {
+        return findEntry(target) != null;
+    }
+
+    private Entry findEntry(Object target) {
+        for (Entry entry: entries) {
+            if (equals(target, entry.getKey())) {
+                return entry;
+            }
+        }
+        return null;
+    }
+
+    private boolean equals(Object target, Object obj) {
+        if (target == null) {
+            return obj == null;
+        }
+        return target.equals(obj);
+    }
+
+    @Override
+    public boolean containsValue(Object target) {
+        for (Map.Entry<K, V> entry: entries) {
+            if (equals(target, entry.getValue())) {
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
-    public boolean containsKey(Object key) {
-        return false;
-    }
-
-    @Override
-    public boolean containsValue(Object value) {
-        return false;
+    public Set<Map.Entry<K, V>> entrySet() {
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -56,8 +81,21 @@ public class MyLinearMap<K, V> implements Map<K, V> {
         if (entry == null) {
             return null;
         }
+        return entry.getValue();
+    }
 
-        return (V) entry.getValue();
+    @Override
+    public boolean isEmpty() {
+        return entries.isEmpty();
+    }
+
+    @Override
+    public Set<K> keySet() {
+        Set<K> set = new HashSet<K>();
+        for (Entry entry: entries) {
+            set.add(entry.getKey());
+        }
+        return set;
     }
 
     @Override
@@ -67,9 +105,16 @@ public class MyLinearMap<K, V> implements Map<K, V> {
             entries.add(new Entry(key, value));
             return null;
         } else {
-            V oldValue = (V) entry.getValue();
+            V oldValue = entry.getValue();
             entry.setValue(value);
             return oldValue;
+        }
+    }
+
+    @Override
+    public void putAll(Map<? extends K, ? extends V> map) {
+        for (Map.Entry<? extends K, ? extends V> entry: map.entrySet()) {
+            put(entry.getKey(), entry.getValue());
         }
     }
 
@@ -79,55 +124,42 @@ public class MyLinearMap<K, V> implements Map<K, V> {
         if (entry == null) {
             return null;
         } else {
-            V value = (V) entry.getValue();
+            V value = entry.getValue();
             entries.remove(entry);
             return value;
         }
     }
 
     @Override
-    public void putAll(Map<? extends K, ? extends V> m) {
-
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public Set<K> keySet() {
-        return null;
+    public int size() {
+        return entries.size();
     }
 
     @Override
     public Collection<V> values() {
-        return null;
-    }
-
-    @Override
-    public Set<Map.Entry<K, V>> entrySet() {
-        return null;
-    }
-
-    private Entry findEntry(Object target) {
-        for(Entry entry: entries) {
-            if (equals(target, entry.getKey())) {
-                return entry;
-            }
+        Set<V> set = new HashSet<V>();
+        for (Entry entry: entries) {
+            set.add(entry.getValue());
         }
-
-        return null;
+        return set;
     }
 
-    // 실행시간: target과 키의 크기에 의존함
-    private boolean equals(Object target, Object obj) {
-        if (target == null) {
-            return obj == null;
-        }
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        Map<String, Integer> map = new MyLinearMap<String, Integer>();
+        map.put("Word1", 1);
+        map.put("Word2", 2);
+        Integer value = map.get("Word1");
+        System.out.println(value);
 
-        return target.equals(obj);
+        for (String key: map.keySet()) {
+            System.out.println(key + ", " + map.get(key));
+        }
+    }
+
+    public Collection<? extends java.util.Map.Entry<K, V>> getEntries() {
+        return entries;
     }
 }
-
-

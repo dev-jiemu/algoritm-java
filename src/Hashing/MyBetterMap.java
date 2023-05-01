@@ -8,8 +8,9 @@ import java.util.*;
 public class MyBetterMap<K, V> implements Map<K, V> {
 
     protected List<MyLinearMap<K, V>> maps;
+
     public MyBetterMap() {
-        makeMaps(k);
+        makeMaps(2);
     }
 
     protected void makeMaps(int k) {
@@ -34,6 +35,12 @@ public class MyBetterMap<K, V> implements Map<K, V> {
     }
 
     @Override
+    public boolean containsKey(Object key) {
+        MyLinearMap<K, V> map = chooseMap(key);
+        return map.containsKey(key);
+    }
+
+    @Override
     public V get(Object key) {
         MyLinearMap<K, V> map = chooseMap(key);
         return map.get(key);
@@ -47,16 +54,17 @@ public class MyBetterMap<K, V> implements Map<K, V> {
 
     @Override
     public int size() {
-        return 0;
+        int total = 0;
+
+        for (MyLinearMap<K, V> map: maps) {
+            total += map.size();
+        }
+
+        return total;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public boolean containsKey(Object key) {
         return false;
     }
 
