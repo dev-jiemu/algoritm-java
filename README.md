@@ -18,4 +18,11 @@ java로 공부하는 알고리즘
 - LIFO : 나중에 넣은 데이터가 먼저 나옴
 - java main method가 예시임(main 함수가 가장 나중에 실행됨) 
 
+<br>
+
+### 2023.06.25 algoritm-java
+3. Queue
+- FIFO : 먼저 넣은 데이터가 먼저 나옴
+- 배열구조로 큐를 구현하면 : en-queue - O(1), de-queue - O(n)
+- 링버퍼 형태로 구현한다면 de-queue도 시간복잡도 O(1)로 처리 가능
 
