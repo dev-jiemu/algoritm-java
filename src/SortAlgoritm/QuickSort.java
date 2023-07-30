@@ -57,4 +57,37 @@ public class QuickSort {
 
         }
     }
+
+    // 가운데값 인덱스 반환
+    static int sort3elem(int[] x, int a, int b, int c) {
+        if (x[b] < x[a]) swap(x, b, a);
+        if (x[c] < x[b]) swap(x, c, b);
+        if (x[b] < x[a]) swap(x, b, a);
+
+        return b;
+    }
+
+    // 시간복잡도 : O(n log n) ~ O(n2)
+    static void quickSort3rd(int[] a, int left, int right) {
+        int pl = left;
+        int pr = right;
+        int m = sort3elem(a, pl, (pl + pr) / 2, pr); // 처음, 가운데, 끝
+        int x = a[m];
+
+        swap(a, m, right - 1);
+        pl++;
+        pr -= 2; // 오른쪽 커서를 왼쪽으로 2만큼 옮김
+
+        do {
+            while (a[pl] < x) pl++;
+            while (a[pr] > x) pr--;
+            if (pl <= pr) {
+                swap(a, pl++, pr--);
+            }
+        } while (pl <= pr);
+
+        if (left < pr) quickSort(a, left, pr);
+        if (pl < right) quickSort(a, pl, right);
+    }
+
 }
