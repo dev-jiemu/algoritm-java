@@ -40,7 +40,9 @@ java로 공부하는 알고리즘
 - FIFO 구조이긴....한데 우선순위를 정하고 내보냄
 - 필수적으로 Comparable Interface 구현되어야 함
 - 시간 복잡도는 O(NLogN)
+- Ref. https://velog.io/@gillog/Java-Priority-Queue%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90
 
-Ref. https://velog.io/@gillog/Java-Priority-Queue%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90
-
-<br>
+6. Heap
+- 부모값이 자식값보다 항상 큼을 만족하는 완전이진트리
+- 가장 큰값이 root에 있음
+- 시간 복잡도는 O(NLogN)
