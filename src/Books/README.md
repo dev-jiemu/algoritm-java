@@ -17,6 +17,15 @@
 ```
 - [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
 
+4. 정렬하기
+- [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644)
+
+6. 이진탐색
+```
+찾고자 하는 정답이 포함된 범위 중 가운데를 검사함. 절반씩 뽀개서 계산하는게 포인트
+따라서, 탐색 전 정렬이 반드시 필요함
+```
+
 4. 완전탐색
 ```
 완전 탐색: 문제에서 제시하는 모든 경우를 확인하면서 정답을 찾음
