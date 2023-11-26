@@ -37,3 +37,12 @@
 탐색 과정 중 이미 방문한 상태를 재방문하면 시간 복잡도는 기하급수적으로 증가하며, 실행 시간이 문제의 시간 제한을 넘어서게 됨.
 ```
 - [수식 최대화](https://school.programmers.co.kr/learn/courses/30/lessons/67257)
+
+5. 해시(Hash)
+```
+데이터에서 대표값을 추출하는 과정: Hash
+충돌될 가능성이 있으므로 충돌을 최대한 일으키지 않는 해시함수를 정의하는게 중요
+hashCode(), equals()
+```
+- [평행](https://school.programmers.co.kr/learn/courses/30/lessons/120875) ** 테스트케이스 변경으로 인해 후반부 통과가 안되므로, 기울기 계산 수정해야함
+- [중복된 문자 제거](https://school.programmers.co.kr/learn/courses/30/lessons/120888)
