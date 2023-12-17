@@ -44,5 +44,11 @@
 충돌될 가능성이 있으므로 충돌을 최대한 일으키지 않는 해시함수를 정의하는게 중요
 hashCode(), equals()
 ```
-- [평행](https://school.programmers.co.kr/learn/courses/30/lessons/120875) ** 테스트케이스 변경으로 인해 후반부 통과가 안되므로, 기울기 계산 수정해야함
+- [평행](https://school.programmers.co.kr/learn/courses/30/lessons/120875)
 - [중복된 문자 제거](https://school.programmers.co.kr/learn/courses/30/lessons/120888)
+
+6. 이진탐색
+- [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
+
+7. 그래프, 트리
+- [순위](https://school.programmers.co.kr/learn/courses/30/lessons/49191)
