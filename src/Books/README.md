@@ -52,3 +52,5 @@ hashCode(), equals()
 
 7. 그래프, 트리
 - [순위](https://school.programmers.co.kr/learn/courses/30/lessons/49191)
+- [방의 개수](https://school.programmers.co.kr/learn/courses/30/lessons/49190)
+- [길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892)
