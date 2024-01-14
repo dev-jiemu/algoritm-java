@@ -76,3 +76,11 @@ private static long iterativeFibonacci(int n) {
 ```
 - [피보나치 수](https://school.programmers.co.kr/learn/courses/30/lessons/12945)
 - [정수 삼각형](https://school.programmers.co.kr/learn/courses/30/lessons/43105)
+
+10. 그리디 알고리즘
+```
+그리디 알고리즘: 탐색 중인 숫자와 목표 숫자의 차이를 이용해서 최선의 상태로 전이해나감.
+최선의 상태로 전이하는게 독이 되는 경우도 있으므로 잘 생각해야함 ㅠ
+```
+- [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
+- [단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884)
