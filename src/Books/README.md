@@ -9,6 +9,7 @@
 2. 문자열
 - [자연수 뒤집어 배열로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12932)
 - [문자열 압축](https://school.programmers.co.kr/learn/courses/30/lessons/60057)
+- [이진 변환 반복하기](https://school.programmers.co.kr/learn/courses/30/lessons/70129)
 
 3. 재귀
 ```
