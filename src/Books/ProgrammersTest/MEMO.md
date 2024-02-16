@@ -48,6 +48,8 @@ DFS *
 ```
 - [수식 최대화](https://school.programmers.co.kr/learn/courses/30/lessons/67257)
 - [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
+- [단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
+- [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844)
 
 7. 해시(Hash)
 ```
