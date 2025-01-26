@@ -1,9 +1,6 @@
 package src.Recursion;
 
 import src.Stack.IntStack;
-import sun.nio.ch.sctp.SctpNet;
-
-import java.util.IntSummaryStatistics;
 import java.util.Scanner;
 
 // 재귀함수 이해해보기
