@@ -1,17 +1,10 @@
 package src.Books.CodingInterview.StackAndQueue.QueueIslands;
 
+import src.Books.CodingInterview.StackAndQueue.Cell;
+
 import java.util.*;
 
 public class Islands {
-    private static class Cell {
-        int r, c;
-
-        public Cell(int r, int c) {
-            this.r = r;
-            this.c = c;
-        }
-    }
-
     private static final int[] ROW = {-1, -1, -1, 0, 1, 0, 1, 1};
     private static final int[] COL = {-1, 1, 0, -1, -1, 1, 0, 1};
 
