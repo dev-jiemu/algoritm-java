@@ -1,5 +1,7 @@
 package src.Books.CodingInterview.TreeAndGraph.BinarySearchTreeDuplicates;
 
+import java.util.HashMap;
+
 // 중복을 허용하는 이진탐색 트리 만들기
 public class BinarySearchTree<T extends Comparable<T>> {
     private class Node {
@@ -11,6 +13,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
         public Node(T element, int count, Node left, Node right) {
             this.element = element;
             this.count = count;
+            this.left = left;
+            this.right = right;
+        }
+
+        public Node(T element, Node left, Node right) {
+            this.element = element;
             this.left = left;
             this.right = right;
         }
@@ -47,7 +55,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
 
         if (element.compareTo(node.element) == 0) {
-            if (node.count > 0) {
+            if (node.count > 0) { // hash table 활용할땐 이거 체크할 필요 없음
                 node.count--;
                 return node;
             }
@@ -64,7 +72,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 return right;
             } else {
                 Node leftmost = findLeftmostNode(node.right);
-
                 node.element = leftmost.element;
                 node.right = delete(node.right, node.element);
             }
@@ -81,6 +88,49 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return node;
     }
 
-    // TODO: 해시 테이블로 중복구조 구현해보기
+    // hash table 로 구현해보기
+    private HashMap<T, Integer> countMap = new HashMap<>(); // 기존 Node의 count 필드를 대체함
+
+    public boolean insertWithHash(T element) {
+        if (countMap.containsKey(element)) {
+            countMap.put(element, countMap.get(element) + 1);
+            return true;
+        }
+
+        root = insertWithHash(root, element);
+        countMap.put(element, 1);
+        return true;
+    }
+
+    private Node insertWithHash(Node current, T element) {
+        if (current == null) {
+            return new Node(element, null, null);
+        }
+
+        if (element.compareTo(current.element) < 0) {
+            current.left = insert(current.left, element);
+        } else {
+            current.right = insert(current.right, element);
+        }
+
+        return current;
+    }
+    
+    // 삭제할때
+    public boolean deleteWithHash(T element) {
+        if (!countMap.containsKey(element)) {
+            return false;
+        }
+
+        int count = countMap.get(element);
+        if (count > 1) {
+            countMap.put(element, count - 1);
+            return true;
+        }
+
+        countMap.remove(element);
+        root = delete(root, element);
+        return true;
+    }
 
 }
