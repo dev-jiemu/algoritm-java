@@ -11,7 +11,7 @@ public class BinaryTree {
     private Node root;
 
     private void verticalSum(Node root, Map<Integer, Integer> map, int dist) {
-        if(root == null) return;
+        if (root == null) return;
         if (!map.containsKey(dist)) map.put(dist, 0);
 
         map.put(dist, map.get(dist) + (Integer) root.element); // 합계 저장
@@ -20,5 +20,39 @@ public class BinaryTree {
         verticalSum(root.right, map, dist + 1);
     }
 
-    // TODO: 이중 연결 리스트로 O(n) 까지 시간 복잡도를 줄여보면? -> 이것도 왼쪽, 오른쪽 재귀로 그냥 더하면 될듯?
+    // 이중 연결 리스트(DLL)
+    class DLLNode {
+        int sum;
+        DLLNode prev, next;
+
+        public DLLNode(int sum) {
+            this.sum = sum;
+        }
+    }
+
+    public void verticalSumDLL(Node root) {
+        DLLNode dllNode = new DLLNode(0);
+        verticalSumDLL(root, dllNode);
+    }
+
+    private void verticalSumDLL(Node root, DLLNode dllNode) {
+        if (root == null) return;
+
+        dllNode.sum += (Integer) root.element;
+
+        // 재귀로 쭉 계산
+
+        if (root.left != null) {
+            if (dllNode.prev == null) dllNode.prev = new DLLNode(0);
+            dllNode.prev.next = dllNode;
+            verticalSumDLL(root.left, dllNode.prev);
+        }
+
+        if (root.right != null) {
+            if (dllNode.next == null) dllNode.next = new DLLNode(0);
+            dllNode.next.prev = dllNode;
+            verticalSumDLL(root.right, dllNode.next);
+        }
+    }
+
 }
