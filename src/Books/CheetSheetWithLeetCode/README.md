@@ -26,3 +26,8 @@ def backtrack(경로, 선택 리스트):
         선택해제
 ```
 - N퀸 문제 (https://leetcode.com/problems/n-queens/description/)
+```markdown
+BFS(깊이우선 : 최단경로), DFS(넓이우선 : 그외)
+```
+- 이진 트리의 최소 높이(https://leetcode.com/problems/minimum-depth-of-binary-tree/description/)
+- 자물쇠를 여는 최소 단계(https://leetcode.com/problems/open-the-lock/description/)
