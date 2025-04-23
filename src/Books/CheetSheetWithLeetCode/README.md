@@ -42,3 +42,22 @@ left, right :
 - 연결 리스트 문제(https://leetcode.com/problems/linked-list-cycle/description/)
 - 연결 리스트 문제2(https://leetcode.com/problems/linked-list-cycle-ii/description/)
 - 같은 숫자 찾기**(https://leetcode.com/problems/find-the-duplicate-number/description/)
+
+5. 이진트리
+- 이진트리(https://leetcode.com/problems/binary-search/description/)
+
+6. 슬라이딩 윈도우
+```
+int left = 0, right = 0;
+
+while (right < s.size()) {
+    window.add(s[right]);
+    right++;
+    
+    while(window in windows) {
+        window.remove(s[left]);
+        left++;
+    }
+}
+```
+- 최소 문자열(https://leetcode.com/problems/minimum-window-substring/description/)
