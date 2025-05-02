@@ -19,7 +19,7 @@ public class MinBinarySearch<T> {
     private Node minimalBst(T[] m, int start, int end) {
 
         int middle = (start + end) / 2;
-        Node node = new Node(m[middle]);
+        Node node = new Node((Comparable) m[middle]);
 
         nodeCount++;
 
