@@ -21,7 +21,6 @@ public class ForkliftAndCrane {
         int m = storage[0].length();
 
         char[][] containers = new char[n][m];
-        boolean[][] visited = new boolean[n][m]; // 이미 꺼냈는지 체크용
 
         // 컨테이너 정보 저장
         for(int i = 0; i < n; i++) {
