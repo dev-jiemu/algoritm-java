@@ -1,27 +1,12 @@
 package src.LeetCode.BFS;
 
 
+import src.LeetCode.BFS.common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class SameTree {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {}
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     // 1. 재귀로 깔끔하게 풀기
     public boolean isSameTreeRecursion(TreeNode p, TreeNode q) {
