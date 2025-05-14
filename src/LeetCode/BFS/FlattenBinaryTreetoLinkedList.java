@@ -33,4 +33,22 @@ public class FlattenBinaryTreetoLinkedList {
             prev = current;
         }
     }
+
+
+    // 2. 재귀로 풀기
+    public void flattenRecursion(TreeNode root) {
+        if (root == null) return;
+        flatten(root.left);
+        flatten(root.right);
+
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+
+        root.left = null;
+        root.right = left;
+
+        TreeNode p = root;
+        while (p.right != null) p = p.right; // right 로 이동
+        p.right = right;
+    }
 }
