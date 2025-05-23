@@ -1,4 +1,4 @@
-package src.LeetCode.BFS.common;
+package src.LeetCode.BFSandDFS.common;
 
 public class TreeNode {
     public int val;
