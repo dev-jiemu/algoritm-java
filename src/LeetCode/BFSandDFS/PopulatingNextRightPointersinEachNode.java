@@ -1,6 +1,6 @@
 package src.LeetCode.BFSandDFS;
 
-import src.LeetCode.BFSandDFS.common.Node;
+import src.LeetCode.common.Node;
 
 import java.util.LinkedList;
 import java.util.Queue;

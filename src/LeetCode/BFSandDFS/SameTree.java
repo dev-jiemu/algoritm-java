@@ -1,7 +1,7 @@
 package src.LeetCode.BFSandDFS;
 
 
-import src.LeetCode.BFSandDFS.common.TreeNode;
+import src.LeetCode.common.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
