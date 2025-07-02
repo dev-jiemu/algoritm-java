@@ -1,4 +1,4 @@
-package src.LeetCode.BFSandDFS;
+package src.LeetCode.Graphs;
 
 import java.util.ArrayList;
 import java.util.List;
