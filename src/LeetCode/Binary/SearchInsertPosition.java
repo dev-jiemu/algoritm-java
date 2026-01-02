@@ -1,4 +1,4 @@
-package src.LeetCode.BinarySearch;
+package src.LeetCode.Binary;
 
 public class SearchInsertPosition {
     // 완전 일치하는경우 말고 중간값도 생각해야하네 ㅇㅂㅇ...

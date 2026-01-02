@@ -1,4 +1,4 @@
-package src.LeetCode.BinarySearch;
+package src.LeetCode.Binary;
 
 // https://leetcode.com/problems/minimum-operations-to-make-binary-palindrome/description/
 public class MinimumOperationstoMakeBinaryPalindrome {

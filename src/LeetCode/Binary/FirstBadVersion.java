@@ -1,4 +1,4 @@
-package src.LeetCode.BinarySearch;
+package src.LeetCode.Binary;
 
 // https://leetcode.com/problems/first-bad-version/?envType=problem-list-v2&envId=binary-search
 public class FirstBadVersion {

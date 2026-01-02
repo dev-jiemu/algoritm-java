@@ -1,4 +1,4 @@
-package src.LeetCode.BinarySearch;
+package src.LeetCode.Binary;
 
 // https://leetcode.com/problems/sqrtx/description/?envType=problem-list-v2&envId=binary-search
 public class Sqrt {
