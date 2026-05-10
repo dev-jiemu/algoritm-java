@@ -8,18 +8,18 @@ public class PartitionArrayIntoTwoEqualProductSubsets {
         int n = nums.length;
 
         // 모든 원소의 곱이 target ^ 2 보다 크면 애당초 불가능함
-        long totalProduct = 1;
-        for (int num : nums) {
-            totalProduct *= num;
-            if (totalProduct > target * target) {
-                return false;
-            }
-        }
-
-        // 달라도 불가능임
-        if (totalProduct != target * target) {
-            return false;
-        }
+//        long totalProduct = 1;
+//        for (int num : nums) {
+//            totalProduct *= num;
+//            if (totalProduct > target * target) {
+//                return false;
+//            }
+//        }
+//
+//        // 달라도 불가능임
+//        if (totalProduct != target * target) {
+//            return false;
+//        }
 
         /**
          * 해당 마스크 부분 햇갈려서 클로드한테 이것저것 물어봄
@@ -43,14 +43,38 @@ public class PartitionArrayIntoTwoEqualProductSubsets {
          */
 
         for(int mask = 1; mask < (1 << n) - 1; mask++) {
-            long product = 1;
+            long product1 = 1;
+            long product2 = 1; // 선택 안된쪽임
+            boolean valid = true; // totalProduct 체크하니 오버플로우 발생해서;;
+
             for(int i = 0; i < n; i++) {
                 if ((mask & (1 << i)) != 0) {
-                    product *= nums[i];
-                    if (product > target) break; // 조기 종료
+                    // 선택된 원소
+                    if (product1 > target / nums[i]) {
+                        valid = false;
+                        break;
+                    }
+                    product1 *= nums[i];
+                    if (product1 > target) {
+                        valid = false;
+                        break;
+                    }
+                } else {
+                    // 선택 안 된 원소
+                    if (product2 > target / nums[i]) {
+                        valid = false;
+                        break;
+                    }
+                    product2 *= nums[i];
+                    if (product2 > target) {
+                        valid = false;
+                        break;
+                    }
                 }
             }
-            if (product == target) {
+
+            // 양쪽 모두 target이어야함
+            if (valid && product1 == target && product2 == target) {
                 return true;
             }
         }
