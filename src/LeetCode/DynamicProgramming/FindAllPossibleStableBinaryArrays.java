@@ -2,7 +2,6 @@ package src.LeetCode.DynamicProgramming;
 
 // 3129. Find All Possible Stable Binary Arrays I
 // https://leetcode.com/problems/find-all-possible-stable-binary-arrays-i/description/
-// TODO : 케이스 통과 안됨 수정해야됨 ㅠ
 public class FindAllPossibleStableBinaryArrays {
     private static final int MOD = 1_000_000_007;
 
@@ -12,6 +11,9 @@ public class FindAllPossibleStableBinaryArrays {
 
         for (int i = 1; i <= Math.min(limit, one); i++) {
             dp[0][i][1] = 1;
+        }
+        for (int i = 1; i <= Math.min(limit, zero); i++) {
+            dp[i][0][0] = 1;
         }
 
         for (int i = 0; i <= zero; i++) {
