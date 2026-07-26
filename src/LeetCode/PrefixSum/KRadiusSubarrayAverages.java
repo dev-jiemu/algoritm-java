@@ -6,7 +6,7 @@ import java.util.Arrays;
 // https://leetcode.com/problems/k-radius-subarray-averages/description/
 public class KRadiusSubarrayAverages {
     public int[] getAverages(int[] nums, int k) {
-        int[] prefix = new int[nums.length];
+        long[] prefix = new long[nums.length];
         prefix[0] = nums[0];
         for (int i = 1; i < nums.length; i++) {
             prefix[i] = prefix[i-1] + nums[i];
@@ -16,8 +16,8 @@ public class KRadiusSubarrayAverages {
         Arrays.fill(output, -1);
 
         for (int i = k; i < nums.length - k; i++) {
-            int sum = (i - k - 1 >= 0) ? prefix[i+k] - prefix[i-k-1] : prefix[i+k];
-            output[i] = sum / (2 * k + 1);
+            long sum = (i - k - 1 >= 0) ? prefix[i+k] - prefix[i-k-1] : prefix[i+k];
+            output[i] = (int) (sum / (2 * k + 1));
         }
 
         return output;
